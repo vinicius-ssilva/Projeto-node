@@ -79,12 +79,8 @@ const {customer}=request;
 const {date}=request.query;
 
 const dateformat=new Date(date + " 00:00");
-
-const statment=customer.statment.filter((statment)=>statment.
-created_at.toDateString() === new Date
-(dateformat).toDateString());
-return response.status(200).json(statment);
-
+const statment=customer.statment.filter((statment)=>statment.created_at.toDateString() === new Date(dateformat).toDateString());
+return response.json(statment);
 });
 
 
@@ -94,4 +90,4 @@ return response.status(200).json(statment);
 
 
 
-app.listen(10);
+app.listen(100);
